@@ -528,20 +528,30 @@ footer{
 
 /* RESPONSIVE */
 
+html,
+body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
 @media(max-width:900px){
 
   .hero-grid,
   .pricing-grid,
+  .maintenance-grid,
   .contact-box{
     grid-template-columns:1fr;
   }
 
   .cards,
-  .portfolio-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .steps{
+  .portfolio-grid,
+  .steps,
+  .extra-services-grid{
     grid-template-columns:1fr 1fr;
   }
 
@@ -549,129 +559,382 @@ footer{
     display:none;
   }
 
-  .features{
-  grid-template-columns:1fr;
-}
-
-.starter-features{
-  grid-template-columns:1fr;
-}
-
-}
-
-@media(max-width:600px){
-
-  .cards,
-  .portfolio-grid,
-  .steps{
+  .features,
+  .starter-features{
     grid-template-columns:1fr;
   }
+}
 
-  .hero-buttons{
-    flex-direction:column;
-  }
-
-  .btn{
-    width:100%;
-  }
+@media(max-width:700px){
 
   section{
-    padding:70px 0;
+    padding:64px 0;
   }
-}
 
-.side-card p{
-  margin-bottom:30px;
-  line-height:1.7;
-}
-
-.pricing-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:28px;
-  align-items:stretch;
-}
-
-.side-card{
-  width:100%;
-}
-
-.maintenance-grid{
-  display:grid;
-  grid-template-columns:repeat(2, minmax(0, 1fr));
-  gap:28px;
-  width:100%;
-  margin:0 auto 28px;
-  align-items:stretch;
-}
-
-.featured-maintenance{
-  border:1px solid rgba(245,197,66,0.45);
-}
-
-.extra-services-grid{
-  display:grid;
-  grid-template-columns:repeat(4, minmax(0, 1fr));
-  gap:20px;
-  margin-top:28px;
-}
-
-.extra-card{
-  display:grid;
-  grid-template-rows:auto auto 1fr auto;
-}
-
-.extra-card .price{
-  align-self:end;
-  margin-top:32px;
-  letter-spacing:0;
-  line-height:1.1;
-}
-
-@media(max-width:900px){
-  .maintenance-grid,
-  .extra-services-grid{
-    grid-template-columns:1fr;
+  .container{
+    width:min(100% - 32px, 1100px);
   }
-}
 
-@media(max-width:1100px){
-  .extra-services-grid{
-    grid-template-columns:repeat(2,1fr);
+  nav{
+    height:70px;
   }
-}
 
-@media(max-width:650px){
-  .extra-services-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-@media(max-width:850px){
-  .maintenance-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-
-
-body{
-  overflow-x:hidden;
-}
-
-@media(max-width:600px){
-
-  .mock-card{
-    display:none;
+  .logo{
+    font-size:18px;
   }
 
   .hero{
     min-height:auto;
-    padding-top:130px;
+    padding-top:120px;
+    padding-bottom:70px;
+    align-items:flex-start;
   }
 
   .hero-grid{
+    display:block;
+  }
+
+  .mock-card{
+    display:none !important;
+  }
+
+  .badge{
+    font-size:12px;
+    padding:7px 12px;
+    margin-bottom:18px;
+  }
+
+  h1{
+    font-size:38px;
+    line-height:1;
+    letter-spacing:-1.5px;
+    margin-bottom:18px;
+  }
+
+  .hero p{
+    font-size:16px;
+    line-height:1.55;
+    margin-bottom:26px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:24px;
+  }
+
+  .btn{
+    width:100%;
+    padding:13px 18px;
+  }
+
+  .hero-tags{
+    gap:10px;
+    font-size:12px;
+  }
+
+  .cards,
+  .portfolio-grid,
+  .steps,
+  .extra-services-grid,
+  .maintenance-grid,
+  .pricing-grid,
+  .contact-box{
+    grid-template-columns:1fr !important;
+  }
+
+  .section-head{
+    margin-bottom:30px;
+  }
+
+  .section-head h2,
+  .contact-box h2{
+    font-size:34px;
+    line-height:1;
+    letter-spacing:-1.5px;
+  }
+
+  .section-head p,
+  .contact-box p{
+    font-size:16px;
+  }
+
+  .price-card,
+  .side-card,
+  .card,
+  .contact-box{
+    padding:24px;
+    border-radius:22px;
+  }
+
+  .price{
+    font-size:38px;
+    letter-spacing:-1px;
+  }
+
+  .starter-features{
     grid-template-columns:1fr;
   }
 
+  .portfolio-image{
+    height:190px;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+  }
+}
+
+@media(max-width:420px){
+
+  h1{
+    font-size:34px;
+  }
+
+  .section-head h2,
+  .contact-box h2{
+    font-size:30px;
+  }
+
+  .price{
+    font-size:34px;
+  }
+
+  .container{
+    width:min(100% - 24px, 1100px);
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVE FIXES
+========================= */
+
+@media (max-width: 850px) {
+
+  /* NAVBAR */
+  nav {
+    flex-direction: column;
+    gap: 18px;
+    padding: 18px 0;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  /* HERO SECTION */
+  .hero {
+    min-height: auto;
+    padding-top: 60px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* REMOVE MOCK CARD ON MOBILE */
+  .mock-card,
+  .hero-visual,
+  .hero-image {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+    line-height: 0.95;
+  }
+
+  .hero p {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* GENERAL CONTAINERS */
+  .container,
+  .container-split {
+    width: 92%;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  section {
+    padding: 70px 0;
+  }
+
+  /* CAFE IMAGE FIXES */
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .photo-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* SALON IMAGE FIX */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* PRICING / CARDS */
+  .pricing-grid,
+  .plans-grid,
+  .services-grid,
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .price-card,
+  .service-card,
+  .plan-card,
+  .card {
+    margin-bottom: 26px;
+    padding: 32px 24px;
+  }
+
+  /* FIX CARD OVERFLOW */
+  .price-card h2,
+  .price-card h3,
+  .card h2,
+  .card h3 {
+    word-break: break-word;
+  }
+
+  /* BUTTONS */
+  .btn,
+  button {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* TEXT OVERFLOW */
+  h1,
+  h2,
+  h3,
+  p,
+  span {
+    overflow-wrap: break-word;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* FINAL MOBILE NAV + CARD SPACING FIXES */
+
+.mobile-menu{
+  display:none;
+}
+
+@media(max-width:700px){
+
+  header{
+    position:fixed;
+  }
+
+  nav{
+    height:72px;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    padding:0;
+  }
+
+  .logo{
+    font-size:18px;
+  }
+
+  .nav-links{
+    display:none !important;
+  }
+
+  .mobile-menu{
+    display:block;
+    position:relative;
+  }
+
+  .mobile-menu summary{
+    list-style:none;
+    cursor:pointer;
+    background:var(--accent);
+    color:#111827;
+    padding:10px 16px;
+    border-radius:999px;
+    font-weight:800;
+    font-size:14px;
+  }
+
+  .mobile-menu summary::-webkit-details-marker{
+    display:none;
+  }
+
+  .mobile-menu-links{
+    position:absolute;
+    right:0;
+    top:52px;
+    width:190px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:12px;
+    display:grid;
+    gap:8px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.35);
+  }
+
+  .mobile-menu-links a{
+    padding:10px 12px;
+    border-radius:12px;
+    color:var(--muted);
+    font-weight:700;
+  }
+
+  .mobile-menu-links a:hover{
+    background:rgba(255,255,255,0.06);
+    color:white;
+  }
+
+  .hero{
+    padding-top:120px;
+  }
+
+  .card,
+  .price-card,
+  .side-card,
+  .extra-card{
+    margin-bottom:28px;
+  }
+
+  .maintenance-grid,
+  .extra-services-grid,
+  .pricing-grid,
+  .cards,
+  .portfolio-grid,
+  .steps{
+    gap:28px !important;
+  }
 }
