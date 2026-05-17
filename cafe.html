@@ -187,6 +187,55 @@
       .photo.large{grid-row:auto;min-height:260px;}
       .banner{flex-direction:column;align-items:flex-start;}
     }
+
+    @media(max-width:700px){
+
+  .hero,
+  .split,
+  .menu-grid,
+  .photo-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .container{
+    width:min(100% - 32px, 1120px);
+  }
+
+  .photo-grid{
+    gap:22px;
+  }
+
+  .photo-grid img,
+  .split img,
+  img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+    object-fit:cover;
+  }
+
+  .hero{
+    padding-top:80px;
+    gap:36px;
+  }
+
+  h1{
+    font-size:42px;
+    line-height:1;
+    letter-spacing:-1.5px;
+  }
+
+  .hero p,
+  .split p{
+    font-size:16px;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
+}
+
   </style>
 </head>
 
