@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trial Session | Iron District</title>
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:Arial,sans-serif;background:#050816;color:#f8fafc;line-height:1.6;}
+    a{text-decoration:none;color:inherit;}
+    .container{width:min(1140px,92%);margin:auto;}
+
+    header{padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.1);}
+    nav{display:flex;justify-content:space-between;align-items:center;}
+    .logo{font-size:24px;font-weight:900;}
+    .nav-links{display:flex;gap:24px;align-items:center;color:#cbd5e1;font-weight:700;}
+    .nav-links a:hover{color:#f97316;}
+    .back{background:#f97316;color:#111827;padding:10px 16px;border-radius:999px;font-weight:900;}
+
+    section{
+      min-height:82vh;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+      padding:80px 0;
+    }
+
+    h1{
+      font-size:clamp(52px,7vw,92px);
+      line-height:0.9;
+      letter-spacing:-4px;
+      text-transform:uppercase;
+      margin-bottom:22px;
+    }
+
+    p{
+      color:#cbd5e1;
+      font-size:18px;
+      margin-bottom:28px;
+      max-width:580px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:#f97316;
+      color:#111827;
+      padding:14px 22px;
+      border-radius:999px;
+      font-weight:900;
+    }
+
+    .trial-card{
+  min-height:460px;
+  background-image:url("assets/gym4.png");
+  background-size:cover;
+  background-position:center;
+  border-radius:38px;
+  border:2px solid rgba(255,255,255,0.14);
+  padding:40px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  background-clip:padding-box;
+}
+
+.trial-card::after{
+  display:none;
+}
+
+    .trial-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.15));
+    }
+
+    .trial-content{
+      position:relative;
+      z-index:2;
+    }
+
+    .trial-content h3{
+      font-size:34px;
+      margin-bottom:18px;
+    }
+
+    .trial-content ul{
+      list-style:none;
+      display:grid;
+      gap:14px;
+      color:#e5e7eb;
+    }
+
+    .trial-content li::before{
+      content:"✓";
+      color:#f97316;
+      margin-right:10px;
+      font-weight:900;
+    }
+
+    footer{
+      padding:30px 0;
+      border-top:1px solid rgba(255,255,255,0.1);
+      color:#94a3b8;
+    }
+
+    @media(max-width:850px){
+      nav{flex-direction:column;gap:18px;}
+      .nav-links{flex-wrap:wrap;justify-content:center;}
+      section{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">IRON DISTRICT</div>
+
+      <div class="nav-links">
+        <a href="gym.html">Home</a>
+        <a href="gym-programs.html">Programs</a>
+        <a href="gym-plans.html">Memberships</a>
+        <a href="gym-trial.html">Trial</a>
+        <a href="index.html" class="back">← Back</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="container">
+
+  <div>
+    <h1>Start your trial session.</h1>
+
+    <p>
+      Dedicated landing pages help gyms turn visitors into real enquiries
+      through focused calls to action.
+    </p>
+
+    <a href="#" class="btn">Book Trial Session</a>
+  </div>
+
+  <div class="trial-card">
+    <div class="trial-content">
+      <h3>Trial includes</h3>
+
+      <ul>
+        <li>Gym tour</li>
+        <li>Trainer introduction</li>
+        <li>Access to equipment</li>
+        <li>Beginner guidance</li>
+        <li>Workout consultation</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <div class="container">
+    Sample website by Highstreet Web Co.
+  </div>
+</footer>
+
+</body>
+</html>

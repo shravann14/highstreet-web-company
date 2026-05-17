@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Maison Rose | Salon Sample</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, sans-serif;
+      background:#fbf7f2;
+      color:#1f1713;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .page{
+      display:grid;
+      grid-template-columns:260px 1fr;
+      min-height:100vh;
+    }
+
+    aside{
+      position:sticky;
+      top:0;
+      height:100vh;
+      background:#1f1713;
+      color:white;
+      padding:32px 26px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      z-index:20;
+    }
+
+    .logo{
+      font-family:Georgia, serif;
+      font-size:34px;
+      line-height:1;
+      letter-spacing:-2px;
+      margin-bottom:38px;
+    }
+
+    .side-links{
+      display:grid;
+      gap:18px;
+      color:#eadfd8;
+      font-weight:800;
+    }
+
+    .side-links a:hover{
+      color:#f9a8d4;
+    }
+
+    .back{
+      display:inline-block;
+      background:#f9a8d4;
+      color:#1f1713;
+      padding:12px 16px;
+      border-radius:999px;
+      font-weight:900;
+      text-align:center;
+    }
+
+    main{
+      width:100%;
+      overflow:hidden;
+    }
+
+    .container{
+      width:min(1080px,90%);
+      margin:auto;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:grid;
+      grid-template-columns:0.9fr 1.1fr;
+      gap:52px;
+      align-items:center;
+      padding:80px 0;
+    }
+
+    .tag{
+      color:#be185d;
+      font-weight:900;
+      letter-spacing:3px;
+      font-size:13px;
+      margin-bottom:18px;
+    }
+
+    h1{
+      font-family:Georgia, serif;
+      font-size:clamp(52px,7vw,96px);
+      line-height:0.92;
+      letter-spacing:-5px;
+      margin-bottom:26px;
+    }
+
+    .hero p{
+      color:#6f5d53;
+      font-size:19px;
+      margin-bottom:30px;
+      max-width:620px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:#1f1713;
+      color:white;
+      padding:14px 22px;
+      border-radius:999px;
+      font-weight:900;
+    }
+
+    .hero-card{
+      height:560px;
+      border-radius:42px;
+      background-image:url("assets/salon1.png");
+      background-size:cover;
+      background-position:center;
+      box-shadow:0 28px 70px rgba(31,23,19,0.18);
+    }
+
+    section{
+      padding:86px 0;
+    }
+
+    .section-head{
+      max-width:760px;
+      margin-bottom:40px;
+    }
+
+    .section-head h2{
+      font-family:Georgia, serif;
+      font-size:52px;
+      line-height:1;
+      letter-spacing:-3px;
+      margin-bottom:14px;
+    }
+
+    .section-head p{
+      color:#6f5d53;
+      font-size:17px;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .service{
+      background:white;
+      border-radius:30px;
+      padding:30px;
+      border:1px solid rgba(31,23,19,0.08);
+      box-shadow:0 16px 40px rgba(0,0,0,0.05);
+    }
+
+    .service h3{
+      font-size:26px;
+      margin-bottom:10px;
+    }
+
+    .service p{
+      color:#6f5d53;
+      margin-bottom:18px;
+    }
+
+    .price{
+      color:#be185d;
+      font-weight:900;
+      font-size:20px;
+    }
+
+    .feature{
+      background:#1f1713;
+      color:white;
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:0.9fr 1.1fr;
+      gap:48px;
+      align-items:center;
+    }
+
+    .feature h2{
+      font-family:Georgia, serif;
+      font-size:56px;
+      line-height:1;
+      letter-spacing:-3px;
+      margin-bottom:18px;
+    }
+
+    .feature p{
+      color:#eadfd8;
+      font-size:18px;
+    }
+
+    .feature-img{
+      height:460px;
+      border-radius:38px;
+      background-image:url("assets/salon2.png");
+      background-size:cover;
+      background-position:center;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:1.3fr 1fr 1fr;
+      gap:18px;
+    }
+
+    .gallery-img{
+      min-height:280px;
+      border-radius:32px;
+      background-size:cover;
+      background-position:center;
+    }
+
+    .gallery-img.large{
+      min-height:580px;
+      grid-row:span 2;
+      background-image:url("assets/salon3.png");
+    }
+
+    .gallery-img.img4{
+      background-image:url("assets/salon4.png");
+    }
+
+    .gallery-img.img5{
+      background-image:url("assets/salon5.png");
+    }
+
+    .gallery-img.img6{
+      background-image:url("assets/salon6.png");
+    }
+
+    .gallery-img.img7{
+      background-image:url("assets/salon7.png");
+    }
+
+    .gallery-img.img8{
+      background-image:url("assets/salon8.png");
+    }
+
+    .booking{
+      background:white;
+      border-radius:40px;
+      padding:56px;
+      display:grid;
+      grid-template-columns:1fr 0.9fr;
+      gap:40px;
+      align-items:center;
+      box-shadow:0 18px 50px rgba(0,0,0,0.07);
+    }
+
+    .booking h2{
+      font-family:Georgia, serif;
+      font-size:56px;
+      line-height:1;
+      letter-spacing:-3px;
+      margin-bottom:18px;
+    }
+
+    .booking p{
+      color:#6f5d53;
+      font-size:18px;
+      margin-bottom:26px;
+    }
+
+    .booking-img{
+      height:360px;
+      border-radius:32px;
+      background-image:url("assets/salon6.png");
+      background-size:cover;
+      background-position:center;
+    }
+
+    footer{
+      padding:30px 0;
+      color:#6f5d53;
+    }
+
+    @media(max-width:950px){
+      .page{
+        grid-template-columns:1fr;
+      }
+
+      aside{
+        position:static;
+        height:auto;
+        padding:22px;
+      }
+
+      .side-links{
+        display:flex;
+        flex-wrap:wrap;
+        gap:14px;
+        margin-bottom:20px;
+      }
+
+      .hero,
+      .feature-grid,
+      .booking{
+        grid-template-columns:1fr;
+      }
+
+      .services{
+        grid-template-columns:1fr;
+      }
+
+      .gallery{
+        grid-template-columns:1fr;
+      }
+
+      .gallery-img,
+      .gallery-img.large,
+      .feature-img,
+      .hero-card,
+      .booking-img{
+        min-height:280px;
+        height:320px;
+        grid-row:auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <aside>
+      <div>
+        <div class="logo">Maison<br>Rose</div>
+
+        <div class="side-links">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#style">Style</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#booking">Booking</a>
+        </div>
+      </div>
+
+      <a href="index.html" class="back">← Back to Highstreet</a>
+    </aside>
+
+    <main>
+
+      <section id="home">
+        <div class="container hero">
+
+          <div>
+            <div class="tag">PREMIUM SALON EXPERIENCE</div>
+
+            <h1>Soft glam, clean style, confident finish.</h1>
+
+            <p>
+              A premium salon website concept with elegant spacing, soft colours,
+              visual sections, and a clear booking flow.
+            </p>
+
+            <a href="#booking" class="btn">Book an Appointment</a>
+          </div>
+
+          <div class="hero-card"></div>
+
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="container">
+
+          <div class="section-head">
+            <h2>Signature services</h2>
+            <p>
+              Clear service cards help customers understand prices and options quickly.
+            </p>
+          </div>
+
+          <div class="services">
+
+            <div class="service">
+              <h3>Hair Styling</h3>
+              <p>Blowouts, styling, cuts, and finishing for events or everyday looks.</p>
+              <div class="price">From ₹1,200</div>
+            </div>
+
+            <div class="service">
+              <h3>Nail Care</h3>
+              <p>Manicures, gel polish, extensions, and premium nail art.</p>
+              <div class="price">From ₹900</div>
+            </div>
+
+            <div class="service">
+              <h3>Skin Treatments</h3>
+              <p>Facials and skincare services for a fresh, polished look.</p>
+              <div class="price">From ₹1,500</div>
+            </div>
+
+            <div class="service">
+              <h3>Bridal Packages</h3>
+              <p>Complete beauty services for weddings, shoots, and events.</p>
+              <div class="price">Custom quote</div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <section id="style" class="feature">
+        <div class="container feature-grid">
+
+          <div>
+            <h2>Designed to feel calm and premium.</h2>
+            <p>
+              This concept uses a sidebar layout, soft colours, large typography,
+              and real salon imagery to create a luxury feeling.
+            </p>
+          </div>
+
+          <div class="feature-img"></div>
+
+        </div>
+      </section>
+
+      <section id="gallery">
+        <div class="container">
+
+          <div class="section-head">
+            <h2>Visual gallery</h2>
+            <p>
+              Ideal for showing hairstyles, nails, interiors, treatments, and client results.
+            </p>
+          </div>
+
+          <div class="gallery">
+            <div class="gallery-img large"></div>
+            <div class="gallery-img img4"></div>
+            <div class="gallery-img img5"></div>
+            <div class="gallery-img img6"></div>
+            <div class="gallery-img img7"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="booking">
+        <div class="container">
+
+          <div class="booking">
+
+            <div>
+              <h2>Ready for your appointment?</h2>
+              <p>
+                Open Tuesday to Sunday. Walk-ins and appointments available.
+              </p>
+              <a href="#" class="btn">Contact to Book</a>
+            </div>
+
+            <div class="gallery-img img8"></div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <footer>
+        <div class="container">
+          Sample website by Highstreet Web Co.
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+</body>
+</html>

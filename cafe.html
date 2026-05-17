@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafe Sample | Highstreet Web Co.</title>
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:Georgia, serif;background:#f7efe3;color:#2a1d14;line-height:1.6;}
+    a{text-decoration:none;color:inherit;}
+    .container{width:min(1120px,92%);margin:auto;}
+
+    header{
+      padding:24px 0;
+      border-bottom:1px solid rgba(42,29,20,0.15);
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:bold;
+      letter-spacing:-1px;
+    }
+
+    .back{
+      font-family:Arial, sans-serif;
+      background:#2a1d14;
+      color:white;
+      padding:10px 16px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .hero{
+      padding:80px 0;
+      display:grid;
+      grid-template-columns:0.9fr 1.1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .hero-text{
+      padding:30px 0;
+    }
+
+    .tag{
+      font-family:Arial, sans-serif;
+      color:#9a5c22;
+      font-weight:800;
+      letter-spacing:2px;
+      font-size:13px;
+      margin-bottom:18px;
+    }
+
+    h1{
+      font-size:clamp(52px,7vw,92px);
+      line-height:0.9;
+      letter-spacing:-4px;
+      margin-bottom:24px;
+    }
+
+    .hero p{
+      font-family:Arial, sans-serif;
+      font-size:18px;
+      color:#5f4a3a;
+      margin-bottom:30px;
+      max-width:520px;
+    }
+
+    .btn{
+      display:inline-block;
+      font-family:Arial, sans-serif;
+      background:#9a5c22;
+      color:white;
+      padding:14px 22px;
+      border-radius:999px;
+      font-weight:800;
+    }
+
+    .photo-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .photo{
+  width:100%;
+  height:230px;
+  border-radius:30px;
+  object-fit:cover;
+  display:block;
+}
+
+.photo.large{
+  grid-row:span 2;
+  height:480px;
+}
+
+    section{padding:70px 0;}
+
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:start;
+    }
+
+    .section-title{
+      font-size:46px;
+      line-height:1;
+      letter-spacing:-2px;
+      margin-bottom:20px;
+    }
+
+    .section-text{
+      font-family:Arial, sans-serif;
+      color:#5f4a3a;
+      font-size:17px;
+    }
+
+    .menu-list{
+      display:grid;
+      gap:18px;
+      font-family:Arial, sans-serif;
+    }
+
+    .menu-item{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      padding-bottom:18px;
+      border-bottom:1px solid rgba(42,29,20,0.16);
+    }
+
+    .menu-item h3{
+      font-size:20px;
+    }
+
+    .menu-item p{
+      color:#6b5b4d;
+      font-size:14px;
+    }
+
+    .price{
+      font-weight:900;
+      color:#9a5c22;
+    }
+
+    .banner{
+      background:#2a1d14;
+      color:white;
+      border-radius:36px;
+      padding:46px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:30px;
+    }
+
+    .banner h2{
+      font-size:42px;
+      letter-spacing:-2px;
+      line-height:1;
+    }
+
+    .banner p{
+      font-family:Arial, sans-serif;
+      color:#e5d4c0;
+      margin-top:12px;
+    }
+
+    footer{
+      padding:30px 0;
+      font-family:Arial, sans-serif;
+      color:#6b5b4d;
+    }
+
+    @media(max-width:850px){
+      .hero,.split{grid-template-columns:1fr;}
+      .photo.large{grid-row:auto;min-height:260px;}
+      .banner{flex-direction:column;align-items:flex-start;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Brew & Bean</div>
+        <a href="index.html" class="back">← Back to Highstreet Web Co.</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="container hero">
+      <div class="hero-text">
+        <div class="tag">ARTISAN CAFE</div>
+        <h1>Slow coffee. Fresh mornings.</h1>
+        <p>
+          A warm editorial-style website concept for cafes that want to show atmosphere,
+          menu highlights, opening hours, and location clearly.
+        </p>
+        <a href="#menu" class="btn">Explore Menu</a>
+      </div>
+
+      <div class="photo-grid">
+  <img src="assets/cafe-main.jpg" class="photo large" alt="Cafe interior">
+  <img src="assets/cafe-1.avif" class="photo" alt="Cup of coffee">
+  <img src="assets/cafe-2.jpg" class="photo" alt="Cafe pastry">
+</div>
+    </section>
+
+    <section class="container split">
+      <div>
+        <h2 class="section-title">A place for coffee, work, and conversation.</h2>
+      </div>
+
+      <p class="section-text">
+        This layout is designed for a cafe that wants a more story-driven website.
+        Instead of looking too corporate, it feels warm, local, and personal.
+        It could include real photography, menu sections, Google Maps, and online contact buttons.
+      </p>
+    </section>
+
+    <section id="menu" class="container split">
+      <div>
+        <h2 class="section-title">Menu highlights</h2>
+        <p class="section-text">
+          A simple menu preview helps customers quickly understand what the cafe offers.
+        </p>
+      </div>
+
+      <div class="menu-list">
+
+        <div class="menu-item">
+          <div>
+            <h3>Cappuccino</h3>
+            <p>Espresso, steamed milk, and soft foam.</p>
+          </div>
+          <div class="price">₹180</div>
+        </div>
+
+        <div class="menu-item">
+          <div>
+            <h3>Iced Latte</h3>
+            <p>Cold espresso with milk and ice.</p>
+          </div>
+          <div class="price">₹210</div>
+        </div>
+
+        <div class="menu-item">
+          <div>
+            <h3>Chocolate Croissant</h3>
+            <p>Fresh pastry with dark chocolate.</p>
+          </div>
+          <div class="price">₹160</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="banner">
+        <div>
+          <h2>Open daily from 8 AM.</h2>
+          <p>Visit us for coffee, pastries, and quiet mornings.</p>
+        </div>
+        <a href="#" class="btn">Get Directions</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      Sample website by Highstreet Web Co.
+    </div>
+  </footer>
+
+</body>
+</html>
