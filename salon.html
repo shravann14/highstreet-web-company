@@ -341,6 +341,125 @@
         grid-row:auto;
       }
     }
+
+    @media(max-width:700px){
+
+  body{
+    overflow-x:hidden;
+  }
+
+  .layout,
+  .hero,
+  .split,
+  .gallery,
+  .services,
+  .booking,
+  .section-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .container,
+  main{
+    width:min(100% - 32px, 1120px);
+    margin:auto;
+  }
+
+  img,
+  .hero-img,
+  .gallery-img,
+  .salon-img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+    object-fit:cover;
+  }
+
+  .sidebar{
+    position:static;
+    width:100%;
+  }
+
+  h1{
+    font-size:42px;
+    line-height:1;
+    letter-spacing:-1.5px;
+  }
+
+  h2{
+    font-size:34px;
+    line-height:1;
+  }
+
+  p{
+    font-size:16px;
+  }
+
+  .btn,
+  button{
+    width:100%;
+    text-align:center;
+  }
+
+  section{
+    padding:60px 0;
+  }
+}
+
+@media(max-width:700px){
+
+  .booking,
+  .booking-card,
+  .contact-card,
+  .appointment-card{
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
+    padding:34px 24px;
+  }
+
+  .booking h1,
+  .booking h2,
+  .contact-card h1,
+  .contact-card h2,
+  .appointment-card h1,
+  .appointment-card h2{
+    font-size:42px;
+    line-height:0.95;
+    letter-spacing:-1px;
+    overflow-wrap:break-word;
+    word-break:normal;
+  }
+
+  .booking p,
+  .contact-card p,
+  .appointment-card p{
+    max-width:100%;
+    overflow-wrap:break-word;
+  }
+
+  .booking .btn,
+  .contact-card .btn,
+  .appointment-card .btn,
+  .btn{
+    width:100%;
+    max-width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    white-space:normal;
+  }
+
+  .booking img,
+  .contact-card img,
+  .appointment-card img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+    border-radius:24px;
+    object-fit:cover;
+  }
+}
+
   </style>
 </head>
 
