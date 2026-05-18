@@ -526,6 +526,56 @@ footer{
   gap:16px;
 }
 
+/* PRICING ADD-ON GRIDS */
+
+.starter-card{
+  margin-bottom:96px;
+}
+
+.maintenance-heading{
+  margin-bottom:48px;
+}
+
+.maintenance-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:42px;
+  margin-bottom:48px;
+}
+
+.featured-maintenance{
+  border:1px solid rgba(245,197,66,0.45);
+}
+
+.small-update-card{
+  margin-top:0;
+  margin-bottom:48px;
+}
+
+.extra-services-grid{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0, 1fr));
+  gap:34px;
+  align-items:stretch;
+}
+
+.extra-card{
+  min-height:260px;
+  display:grid;
+  grid-template-rows:auto auto 1fr auto;
+}
+
+.extra-card p{
+  margin-bottom:0;
+}
+
+.extra-card .price{
+  align-self:end;
+  margin-top:30px;
+  margin-bottom:0;
+  line-height:1.05;
+}
+
 /* RESPONSIVE */
 
 html,
@@ -539,7 +589,25 @@ img{
   display:block;
 }
 
-@media(max-width:900px){
+.mobile-menu{
+  display:none;
+}
+
+/* TABLET */
+
+@media(max-width:1100px){
+
+  .extra-services-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:32px;
+  }
+
+  .steps{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media(max-width:950px){
 
   .hero-grid,
   .pricing-grid,
@@ -550,20 +618,46 @@ img{
 
   .cards,
   .portfolio-grid,
-  .steps,
   .extra-services-grid{
     grid-template-columns:1fr 1fr;
   }
 
-  .nav-links{
-    display:none;
+  .steps{
+    grid-template-columns:1fr 1fr;
   }
 
   .features,
   .starter-features{
     grid-template-columns:1fr;
   }
+
+  nav{
+    height:auto;
+    min-height:76px;
+    flex-wrap:wrap;
+    gap:18px;
+    padding:18px 0;
+  }
+
+  .nav-links{
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+  }
+
+  .hero{
+    min-height:auto;
+    padding-top:150px;
+    padding-bottom:90px;
+  }
+
+  .mock-card{
+    display:none !important;
+  }
 }
+
+/* MOBILE */
 
 @media(max-width:700px){
 
@@ -575,12 +669,73 @@ img{
     width:min(100% - 32px, 1100px);
   }
 
+  header{
+    position:fixed;
+  }
+
   nav{
-    height:70px;
+    height:72px;
+    min-height:72px;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:space-between;
+    align-items:center;
+    padding:0;
+    gap:12px;
   }
 
   .logo{
     font-size:18px;
+  }
+
+  .nav-links{
+    display:none !important;
+  }
+
+  .mobile-menu{
+    display:block;
+    position:relative;
+  }
+
+  .mobile-menu summary{
+    list-style:none;
+    cursor:pointer;
+    background:var(--accent);
+    color:#111827;
+    padding:10px 16px;
+    border-radius:999px;
+    font-weight:800;
+    font-size:14px;
+  }
+
+  .mobile-menu summary::-webkit-details-marker{
+    display:none;
+  }
+
+  .mobile-menu-links{
+    position:absolute;
+    right:0;
+    top:52px;
+    width:190px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:12px;
+    display:grid;
+    gap:8px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.35);
+  }
+
+  .mobile-menu-links a{
+    padding:10px 12px;
+    border-radius:12px;
+    color:var(--muted);
+    font-weight:700;
+  }
+
+  .mobile-menu-links a:hover{
+    background:rgba(255,255,255,0.06);
+    color:white;
   }
 
   .hero{
@@ -659,6 +814,27 @@ img{
     font-size:16px;
   }
 
+  .starter-card{
+    margin-bottom:76px;
+  }
+
+  .maintenance-heading{
+    margin-bottom:36px;
+  }
+
+  .maintenance-grid{
+    gap:32px;
+    margin-bottom:42px;
+  }
+
+  .small-update-card{
+    margin-bottom:36px;
+  }
+
+  .extra-services-grid{
+    gap:26px;
+  }
+
   .price-card,
   .side-card,
   .card,
@@ -667,9 +843,17 @@ img{
     border-radius:22px;
   }
 
+  .extra-card{
+    min-height:auto;
+  }
+
   .price{
     font-size:38px;
     letter-spacing:-1px;
+  }
+
+  .extra-card .price{
+    margin-top:26px;
   }
 
   .starter-features{
@@ -705,236 +889,3 @@ img{
   }
 }
 
-/* =========================
-   MOBILE RESPONSIVE FIXES
-========================= */
-
-@media (max-width: 850px) {
-
-  /* NAVBAR */
-  nav {
-    flex-direction: column;
-    gap: 18px;
-    padding: 18px 0;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 14px;
-  }
-
-  .nav-links a {
-    font-size: 14px;
-  }
-
-  /* HERO SECTION */
-  .hero {
-    min-height: auto;
-    padding-top: 60px;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  /* REMOVE MOCK CARD ON MOBILE */
-  .mock-card,
-  .hero-visual,
-  .hero-image {
-    display: none;
-  }
-
-  .hero h1 {
-    font-size: 52px;
-    line-height: 0.95;
-  }
-
-  .hero p {
-    font-size: 18px;
-    line-height: 1.7;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .hero-buttons a {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* GENERAL CONTAINERS */
-  .container,
-  .container-split {
-    width: 92%;
-    max-width: 100%;
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  section {
-    padding: 70px 0;
-  }
-
-  /* CAFE IMAGE FIXES */
-  .photo-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .photo-grid img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  /* SALON IMAGE FIX */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* PRICING / CARDS */
-  .pricing-grid,
-  .plans-grid,
-  .services-grid,
-  .cards-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .price-card,
-  .service-card,
-  .plan-card,
-  .card {
-    margin-bottom: 26px;
-    padding: 32px 24px;
-  }
-
-  /* FIX CARD OVERFLOW */
-  .price-card h2,
-  .price-card h3,
-  .card h2,
-  .card h3 {
-    word-break: break-word;
-  }
-
-  /* BUTTONS */
-  .btn,
-  button {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* TEXT OVERFLOW */
-  h1,
-  h2,
-  h3,
-  p,
-  span {
-    overflow-wrap: break-word;
-  }
-
-  body {
-    overflow-x: hidden;
-  }
-}
-
-/* FINAL MOBILE NAV + CARD SPACING FIXES */
-
-.mobile-menu{
-  display:none;
-}
-
-@media(max-width:700px){
-
-  header{
-    position:fixed;
-  }
-
-  nav{
-    height:72px;
-    flex-direction:row;
-    justify-content:space-between;
-    align-items:center;
-    padding:0;
-  }
-
-  .logo{
-    font-size:18px;
-  }
-
-  .nav-links{
-    display:none !important;
-  }
-
-  .mobile-menu{
-    display:block;
-    position:relative;
-  }
-
-  .mobile-menu summary{
-    list-style:none;
-    cursor:pointer;
-    background:var(--accent);
-    color:#111827;
-    padding:10px 16px;
-    border-radius:999px;
-    font-weight:800;
-    font-size:14px;
-  }
-
-  .mobile-menu summary::-webkit-details-marker{
-    display:none;
-  }
-
-  .mobile-menu-links{
-    position:absolute;
-    right:0;
-    top:52px;
-    width:190px;
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:12px;
-    display:grid;
-    gap:8px;
-    box-shadow:0 20px 40px rgba(0,0,0,0.35);
-  }
-
-  .mobile-menu-links a{
-    padding:10px 12px;
-    border-radius:12px;
-    color:var(--muted);
-    font-weight:700;
-  }
-
-  .mobile-menu-links a:hover{
-    background:rgba(255,255,255,0.06);
-    color:white;
-  }
-
-  .hero{
-    padding-top:120px;
-  }
-
-  .card,
-  .price-card,
-  .side-card,
-  .extra-card{
-    margin-bottom:28px;
-  }
-
-  .maintenance-grid,
-  .extra-services-grid,
-  .pricing-grid,
-  .cards,
-  .portfolio-grid,
-  .steps{
-    gap:28px !important;
-  }
-}
