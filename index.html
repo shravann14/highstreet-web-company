@@ -58,7 +58,8 @@
     <div class="mobile-menu-links">
       <a href="#services">Services</a>
       <a href="#pricing">Pricing</a>
-      <a href="#work">Work</a>
+      <a href="#sample">Sample</a>
+      <a href="#review">Reviews</a>
       <a href="#process">Process</a>
       <a href="#contact">Contact Now</a>
     </div>
@@ -67,7 +68,8 @@
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#pricing">Pricing</a>
-    <a href="#work">Work</a>
+    <a href="#sample">Sample</a>
+    <a href="#review">Reviews</a>
     <a href="#process">Process</a>
     <a href="#contact" class="nav-btn">Contact Now</a>
   </div>
@@ -81,7 +83,7 @@
       <div class="container hero-grid">
 
         <div>
-          <div class="badge">Websites for local businesses</div>
+          <div class="badge">Websites to grow your business</div>
 
           <h1>Make your business look professional online.</h1>
 
@@ -319,7 +321,7 @@
       </div>
     </section>
 
-    <section id="work">
+    <section id="sample">
       <div class="container">
 
         <div class="section-head">
@@ -351,12 +353,58 @@
               <h3>Gym Website</h3>
               <p>Membership plans, trainer info, and strong calls to action.</p>
             </div> 
-          </a> 
+          </a>
+
+         
 
         </div> 
 
       </div> 
     </section> 
+
+    <section id="review" class="proof-section">
+      <div class="container">
+
+        <div class="section-head">
+          <h2>Client reviews.</h2>
+          <p>
+            A real business website project with client feedback showing how a stronger online presence can support customer trust.
+          </p>
+        </div>
+
+        <div class="proof-grid">
+
+          <div class="proof-card">
+            <div class="proof-label">FEATURED PROJECT</div>
+            <h3>SinglView AI</h3>
+
+            <p>
+              A professional website project built for an AI-focused business. The aim was to create a cleaner,
+              more trustworthy online presence with a modern layout and clear business messaging.
+            </p>
+
+            <a href="https://www.singlview.ai/" class="btn btn-primary" target="_blank">
+              View Live Website
+            </a>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+
+            <p class="review-text">
+              “Very impressed with the way Shravan's team delivered the website within time and budget. Within weeks, there was a sharp increase in web site traffic and we started recieving more calls from customers.”
+            </p>
+
+            <div class="review-author">
+              <strong>Srikumar Kumar</strong>
+              <span>Google review</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
 
     <section id="process" class="process">
       <div class="container">
@@ -446,6 +494,23 @@
       <p>Modern websites for local businesses.</p>
     </div>
   </footer>
+
+  <script>
+const mobileMenu = document.querySelector(".mobile-menu");
+const mobileLinks = document.querySelectorAll(".mobile-menu-links a");
+
+mobileLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.removeAttribute("open");
+  });
+});
+
+document.addEventListener("click", (e) => {
+  if (!mobileMenu.contains(e.target)) {
+    mobileMenu.removeAttribute("open");
+  }
+});
+</script>
 
 </body>
 
